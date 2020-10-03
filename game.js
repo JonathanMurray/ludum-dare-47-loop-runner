@@ -70,14 +70,18 @@ var w = 400;
 var h = 400;
 var cell_w = 40;
 
-const player_position = new_position(0, 0)
+const player_position = new_position(0, 0);
+
+function changeStatusText(text) {
+  document.getElementById("status_text").innerText = text;
+}
 
 function update(elapsed_time) {
   if(player_dx != 0 || player_dy != 0){
     round_number ++;
     document.getElementById("round_text").innerText = round_number;
     if (round_number == 10){
-      console.log("TIME RAN OUT!");
+      changeStatusText("TIME RAN OUT!");
       game_over = true;
     }
   }
@@ -86,12 +90,12 @@ function update(elapsed_time) {
   player_dx = player_dy = 0;
   obstacles.forEach(o => {
     if (player_occupies(o)) {
-      console.log("YOU LOSE!");
+      changeStatusText("YOU LOSE!");
       game_over = true;
     }
   });
   if (player_occupies(goal_position)) {
-    console.log("YOU WIN!");
+    changeStatusText("YOU WIN!");
     game_over = true;
   }
 }
