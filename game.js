@@ -6,6 +6,8 @@ var KEY_UP = 87;
 var KEY_LEFT = 65;
 var KEY_DOWN = 83;
 
+var round_number = 1;
+
 INPUT = {
   right_held: false,
   up_held: false,
@@ -32,6 +34,7 @@ INPUT = {
       player_dx = 0;
       player_dy = 1;
     }
+
   },
   onkeyup: function (e) {
     var e = e || window.event;
@@ -70,6 +73,10 @@ var cell_w = 40;
 const player_position = new_position(0, 0)
 
 function update(elapsed_time) {
+  if(player_dx != 0 || player_dy != 0){
+    round_number ++;
+    document.getElementById("round_text").innerText = round_number;
+  }
   player_position.x += player_dx;
   player_position.y += player_dy;
   player_dx = player_dy = 0;
