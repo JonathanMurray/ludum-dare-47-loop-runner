@@ -76,6 +76,10 @@ function update(elapsed_time) {
   if(player_dx != 0 || player_dy != 0){
     round_number ++;
     document.getElementById("round_text").innerText = round_number;
+    if (round_number == 10){
+      console.log("TIME RAN OUT!");
+      game_over = true;
+    }
   }
   player_position.x += player_dx;
   player_position.y += player_dy;
