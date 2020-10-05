@@ -86,7 +86,7 @@ flag_image.src = "assets/flag.svg";
 var move_sound = new Audio('assets/move.wav');
 var move_into_immovable_sound = new Audio('assets/move_into_immovable.wav');
 var death_sound = new Audio('assets/explosion.mp3');
-var victory_sound = new Audio('assets/victory.mp3');
+var victory_sound = new Audio('assets/victory_2.wav');
 
 var w = 400;
 var h = 400;
